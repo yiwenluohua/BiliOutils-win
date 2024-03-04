@@ -23,7 +23,7 @@ echo "请等待："
 start /min cmd /k "npm install -g bilioutils & timeout /t 30 & exit"
 :: 等待，以确保第一个命令有足够时间执行
 timeout /t 60
-echo "正在执行配置文件，如需变更指令或同时执行多个配置文件"
+echo "准备执行BiliOutils每日任务，如需变更指令或同时执行多个配置文件"
 echo "请自行根据https://bo.js.cool/guide/local 文档中的相关内容对bilioutils -c ./config.json内容进行更改。"
 timeout /t 10
 echo ""
