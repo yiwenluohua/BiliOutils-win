@@ -23,7 +23,8 @@ echo "请等待："
 start /min cmd /k "npm install -g bilioutils & timeout /t 30 & exit"
 :: 等待，以确保第一个命令有足够时间执行
 timeout /t 60
-echo "准备执行BiliOutils每日任务，如需变更指令或同时执行多个配置文件"
+echo "任务一执行完成" & %time% > biliOutils_win_log.txt
+echo "正在执行配置文件，如需变更指令或同时执行多个配置文件"
 echo "请自行根据https://bo.js.cool/guide/local 文档中的相关内容对bilioutils -c ./config.json内容进行更改。"
 timeout /t 10
 echo ""
@@ -31,6 +32,7 @@ echo "开始执行步骤二：自动签到"
 echo ""
 :: 启动第二个命令的新窗口
 start /min cmd /k "bilioutils -c 【您的配置目录】\config.json & timeout /t 30 & exit"
-echo "本窗口将在10分钟后自行关闭"
+echo "任务二执行完成" & %time%
+echo "本窗口将在10分钟后自行关闭" > biliOutils_win_log.txt
 timeout /t 600
 exit
